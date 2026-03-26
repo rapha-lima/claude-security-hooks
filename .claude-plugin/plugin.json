@@ -1,0 +1,19 @@
+{
+  "name": "claude-security-hooks",
+  "version": "1.0.0",
+  "description": "Security hooks for Claude Code: blocks dangerous commands, prevents secret leaks, and provides full audit logging",
+  "author": {
+    "name": "Rapha Lima",
+    "url": "https://github.com/raphalima"
+  },
+  "repository": "https://github.com/raphalima/claude-security-hooks",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "hooks",
+    "secrets",
+    "audit",
+    "guard",
+    "protection"
+  ]
+}

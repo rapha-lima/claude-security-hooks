@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-security-hooks",
+  "owner": {
+    "name": "Rapha Lima",
+    "email": ""
+  },
+  "metadata": {
+    "description": "Security hooks for Claude Code: command guard, secrets scanner, and audit logging",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-security-hooks",
+      "source": "./",
+      "description": "Blocks dangerous commands, prevents secret leaks in code, and logs all tool calls for auditing",
+      "version": "1.0.0",
+      "category": "security",
+      "author": {
+        "name": "Rapha Lima"
+      }
+    }
+  ]
+}
