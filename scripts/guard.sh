@@ -81,6 +81,18 @@ if [ "$TOOL_NAME" = "Bash" ]; then
     deny "Shell history manipulation is blocked."
   fi
 
+  # --- Pre-commit secrets scan ---
+  if echo "$COMMAND" | grep -qE '^\s*git\s+commit\b'; then
+    SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+    SCAN_SCRIPT="$SCRIPT_DIR/pre-commit-scan.sh"
+    if [ -x "$SCAN_SCRIPT" ]; then
+      SCAN_RESULT=$(cd "$CWD" && "$SCAN_SCRIPT" 2>/dev/null) || true
+      if [ -n "$SCAN_RESULT" ]; then
+        deny "SECRETS FOUND in staged files — commit blocked. $SCAN_RESULT Remove the secrets and unstage sensitive files before committing."
+      fi
+    fi
+  fi
+
 # ===========================
 # WRITE/EDIT FILE INSPECTION
 # ===========================

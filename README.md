@@ -20,6 +20,15 @@ Inspects every Bash command, Write, and Edit before execution:
 | History tampering | `history -c`, `unset HISTFILE` |
 | Sensitive file writes | Blocks Write/Edit to `.env`, `.pem`, `.key`, `.npmrc`, etc. |
 
+### Pre-Commit Scan (PreToolUse, on `git commit`)
+
+Automatically triggered by the guard when a `git commit` is detected. Scans **all staged files** for secrets before allowing the commit through:
+
+- Reads file content from the git index (`git show :file`), not the working tree
+- Points to the exact file containing the secret: `[config.js] AWS Access Key ID`
+- Blocks the commit until secrets are removed
+- Uses the same detection patterns as the Secrets Scanner below
+
 ### Secrets Scanner (PostToolUse)
 
 Scans content after every Write/Edit for accidentally hardcoded secrets:
@@ -158,6 +167,7 @@ Claude decides to use a tool
     v
 PreToolUse hook (guard.sh)
     |-- Bash? --> inspect command for dangerous patterns
+    |       \-- git commit? --> run pre-commit-scan.sh on staged files
     |-- Write/Edit? --> check if target is a sensitive file
     |-- Other? --> log only
     |

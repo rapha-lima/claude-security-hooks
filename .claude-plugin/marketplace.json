@@ -7,14 +7,14 @@
   },
   "metadata": {
     "description": "Security hooks for Claude Code: command guard, secrets scanner, and audit logging",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "claude-security-hooks",
       "source": "./",
       "description": "Blocks dangerous commands, prevents secret leaks in code, and logs all tool calls for auditing",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "security",
       "author": {
         "name": "Rapha Lima"
