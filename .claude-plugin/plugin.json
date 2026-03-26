@@ -4,9 +4,9 @@
   "description": "Security hooks for Claude Code: blocks dangerous commands, prevents secret leaks, and provides full audit logging",
   "author": {
     "name": "Rapha Lima",
-    "url": "https://github.com/raphalima"
+    "url": "https://github.com/rapha-lima"
   },
-  "repository": "https://github.com/raphalima/claude-security-hooks",
+  "repository": "https://github.com/rapha-lima/claude-security-hooks",
   "license": "MIT",
   "keywords": [
     "security",

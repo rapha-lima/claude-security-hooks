@@ -59,7 +59,7 @@ Every tool call is logged to `~/.claude/logs/audit-YYYY-MM-DD.log` with:
 
 ```bash
 # Add marketplace
-/plugin marketplace add raphalima/claude-security-hooks
+/plugin marketplace add rapha-lima/claude-security-hooks
 
 # Install
 /plugin install claude-security-hooks@claude-security-hooks
@@ -69,7 +69,7 @@ Every tool call is logged to `~/.claude/logs/audit-YYYY-MM-DD.log` with:
 
 1. Clone this repo:
 ```bash
-git clone https://github.com/raphalima/claude-security-hooks.git ~/.claude/plugins/claude-security-hooks
+git clone https://github.com/rapha-lima/claude-security-hooks.git ~/.claude/plugins/claude-security-hooks
 ```
 
 2. Make scripts executable:
